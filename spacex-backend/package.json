@@ -1,15 +1,26 @@
 {
   "name": "spacex-backend",
   "version": "1.0.0",
+  "type": "commonjs",
   "description": "",
-  "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "tsc",
+    "start": "npm run compile && node ./dist/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@apollo/server": "^4.9.5",
+    "@graphql-tools/utils": "^10.0.7",
+    "apollo-server-express": "^3.12.1",
+    "axios": "^1.6.0",
+    "express": "^4.18.2",
+    "graphql": "^16.8.1",
+    "graphql-tools": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.9",
     "typescript": "^5.2.2"
   }
 }

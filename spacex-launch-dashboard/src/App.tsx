@@ -1,20 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+import LaunchList from "./components/LaunchList";
+
+const client = new ApolloClient({
+  uri: "http://localhost:4000/graphql",
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          SpaceX launch dashboard
-        </p>
-        <a>
-          Riverflow technical test
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      <div className="App">
+        <h1>SpaceX Launch Dashboard</h1>
+        <LaunchList />
+      </div>
+    </ApolloProvider>
   );
 }
 
