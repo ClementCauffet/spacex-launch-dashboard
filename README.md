@@ -6,10 +6,10 @@ This project is part of Riverflow's recruitment process
 
 # Development Status
 - [X] Project architecture
-- [] Dockerfiles
+- [ ] Dockerfiles
 - [X] Query all launches
-- [] Query all info / flight
-- [] Graphic
-- [] Caching strategies
-- [] Deployment
+- [ ] Query all info / flight
+- [ ] Graphic
+- [ ] Caching strategies
+- [ ] Deployment
 
