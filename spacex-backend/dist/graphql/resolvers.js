@@ -14,6 +14,7 @@ const resolvers = {
                     date_utc: launch.date_utc,
                     success: launch.success,
                     id: launch.id,
+                    links: launch.links,
                 }));
                 return launches;
             }
@@ -25,7 +26,6 @@ const resolvers = {
             try {
                 const response = await axios_1.default.get(`https://api.spacexdata.com/v5/launches/${id}`);
                 const launch = response.data;
-                // Construisez l'objet LaunchDetails en fonction des données récupérées
                 const launchDetails = {
                     name: launch.name,
                     date_utc: launch.date_utc,
@@ -34,7 +34,6 @@ const resolvers = {
                     rocket: launch.rocket,
                     links: launch.links,
                     crew: launch.crew,
-                    ships: launch.ships,
                 };
                 return launchDetails;
             }

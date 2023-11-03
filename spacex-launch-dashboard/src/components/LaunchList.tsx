@@ -4,11 +4,18 @@ import { useQuery } from "@apollo/client";
 import { gql } from "graphql-tag";
 import { openDB } from "idb";
 
+interface PatchLink {
+  patch: {
+    small: string;
+  };
+}
+
 interface Launch {
   name: string;
   date_utc: string;
   success: boolean;
   id: string;
+  links: PatchLink;
 }
 
 const GET_LAUNCHES = gql`
@@ -18,6 +25,11 @@ const GET_LAUNCHES = gql`
       date_utc
       success
       id
+      links{
+        patch{
+          small
+        }
+      }
     }
   }
 `;
@@ -149,7 +161,7 @@ const LaunchList: React.FC = () => {
           <li key={launch.id}>
             <Link
               to="/launch-details"
-              state={{ launchId: launch.id }}
+              state={{ launchId: launch.id, name: launch.name, date_utc: launch.date_utc, success: launch.success, patch: launch.links.patch.small }}
               style={{ textDecoration: "none" }}
             >
               <div
@@ -163,6 +175,7 @@ const LaunchList: React.FC = () => {
                 <p>Name: {launch.name}</p>
                 <p>Launch Date (UTC): {launch.date_utc}</p>
                 <p>Success: {launch.success ? "Yes" : "No"}</p>
+                <p>Patch: {launch.links.patch.small}</p>
               </div>
             </Link>
           </li>

@@ -8,30 +8,26 @@ type LaunchDetails {
   date_utc: String
   success: Boolean
   details: String
-  rocket: Rocket
+  rocket: String
   links: LaunchLinks
   crew: [CrewMember]
-  ships: [Ship]
-}
-
-type Rocket {
-  name: String
 }
 
 type LaunchLinks {
   webcast: String
-  youtube_id: String
-  reddit_campaign: String
 }
 
 type CrewMember {
-  name: String
-  agency: String
+  crew: String
+  role: String
 }
 
-type Ship {
-  name: String
-  type: String
+type SmallPatch {
+  small: String
+}
+
+type Patch {
+  patch: SmallPatch
 }
 
   type Launch {
@@ -39,6 +35,7 @@ type Ship {
     date_utc: String
     success: Boolean
     id: String
+    links: Patch
   }
 
   type Query {

@@ -10,6 +10,7 @@ const resolvers = {
           date_utc: launch.date_utc,
           success: launch.success,
           id: launch.id,
+          links: launch.links,
         }));
         return launches;
       } catch (error) {
@@ -20,8 +21,6 @@ const resolvers = {
       try {
         const response = await axios.get(`https://api.spacexdata.com/v5/launches/${id}`);
         const launch = response.data;
-
-        // Construisez l'objet LaunchDetails en fonction des données récupérées
         const launchDetails = {
           name: launch.name,
           date_utc: launch.date_utc,
@@ -30,9 +29,7 @@ const resolvers = {
           rocket: launch.rocket,
           links: launch.links,
           crew: launch.crew,
-          ships: launch.ships,
         };
-
         return launchDetails;
       } catch (error) {
         throw new Error(`Failed to fetch SpaceX launch details for ID: ${id}`);

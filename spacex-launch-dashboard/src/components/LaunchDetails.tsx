@@ -1,40 +1,26 @@
+// LaunchDetails.tsx
+
 import React from "react";
-import { useLocation} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { gql } from "graphql-tag";
 
 interface CrewMember {
-  name: string;
-  agency: string;
-}
-
-interface Ship {
-  name: String
-  type: String
+  crew: string;
+  role: string;
 }
 
 const GET_LAUNCH_DETAILS = gql`
   query GetLaunchDetails($id: String!) {
     singleLaunch(id: $id) {
-      name
-      date_utc
-      success
       details
-      rocket {
-        name
-      }
+      rocket
       links {
         webcast
-        youtube_id
-        reddit_campaign
       }
       crew {
-        name
-        agency
-      }
-      ships {
-        name
-        type
+        crew
+        role
       }
     }
   }
@@ -56,29 +42,20 @@ function LaunchDetails() {
   return (
     <div>
       <h2>Launch Details</h2>
-      <p>Name: {launch.name}</p>
-      <p>Launch Date (UTC): {launch.date_utc}</p>
-      <p>Success: {launch.success ? "Yes" : "No"}</p>
+      {/* Affichez les données passées en tant que props */}
+      <p>Name: {location.state?.name}</p>
+      <p>Launch Date (UTC): {location.state?.date_utc}</p>
+      <p>Success: {location.state?.success ? "Yes" : "No"}</p>
       <p>Details: {launch.details}</p>
-      <p>Rocket: {launch.rocket.name}</p>
+      <p>Rocket: {launch.rocket}</p>
       <p>Webcast: {launch.links.webcast}</p>
-      <p>YouTube ID: {launch.links.youtube_id}</p>
-      <p>Reddit Campaign: {launch.links.reddit_campaign}</p>
+      <p>Patch: {location.state?.patch}</p>
       <p>Crew Members:</p>
       <ul>
         {launch.crew.map((crewMember: CrewMember, index: number) => (
           <li key={index}>
-            <p>Name: {crewMember.name}</p>
-            <p>Agency: {crewMember.agency}</p>
-          </li>
-        ))}
-      </ul>
-      <p>Ships:</p>
-      <ul>
-        {launch.ships.map((ship: Ship, index: number) => (
-          <li key={index}>
-            <p>Name: {ship.name}</p>
-            <p>Type: {ship.type}</p>
+            <p>Crew: {crewMember.crew}</p>
+            <p>Role: {crewMember.role}</p>
           </li>
         ))}
       </ul>
