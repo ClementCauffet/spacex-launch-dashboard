@@ -1,5 +1,3 @@
-// LaunchDetails.tsx
-
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { useQuery } from "@apollo/client";
@@ -42,7 +40,6 @@ function LaunchDetails() {
   return (
     <div>
       <h2>Launch Details</h2>
-      {/* Affichez les données passées en tant que props */}
       <p>Name: {location.state?.name}</p>
       <p>Launch Date (UTC): {location.state?.date_utc}</p>
       <p>Success: {location.state?.success ? "Yes" : "No"}</p>
