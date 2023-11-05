@@ -172,10 +172,10 @@ const LaunchList: React.FC = () => {
                   marginBottom: "10px",
                 }}
               >
-                <p>Name: {launch.name}</p>
-                <p>Launch Date (UTC): {launch.date_utc}</p>
-                <p>Success: {launch.success ? "Yes" : "No"}</p>
-                <p>Patch: {launch.links.patch.small}</p>
+                <p>Name: {launch?.name}</p>
+                <p>Launch Date (UTC): {launch?.date_utc}</p>
+                <p>Success: {launch?.success ? "Yes" : "No"}</p>
+                <p>Patch: {launch?.links.patch.small}</p>
               </div>
             </Link>
           </li>
