@@ -37,12 +37,15 @@ function RocketDetails({ rocket }: RocketDetailsProps) {
   const rocketInfo = data?.rocketDetails;
 
   return (
-    <div>
-      <h2>Rocket Details</h2>
-      <p>Name: {rocketInfo?.name}</p>
-      <p>Type: {rocketInfo?.type}</p>
-      <p>First flight: {rocketInfo?.first_flight}</p>
-      <p>Img: {rocketInfo?.img}</p>
+    <div style={{textAlign: "center"}}>
+      <p><strong>Name: </strong>{rocketInfo?.name}</p>
+      <p><strong>Type: </strong>{rocketInfo?.type}</p>
+      <p><strong>First flight: </strong>{rocketInfo?.first_flight}</p>
+      <img
+        src={rocketInfo?.img}
+        alt="RocketImg"
+        style={{width: "300px", height: "auto", borderRadius: "5%"}}                    
+      />
     </div>
   );
 }

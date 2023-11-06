@@ -40,11 +40,10 @@ function PayloadDetails({ payload }: PayloadDetailsProps) {
 
   return (
     <div>
-      <h2>Payload Details</h2>
-      <p>Name: {payloadInfo?.name}</p>
-      <p>Type: {payloadInfo?.type}</p>
-      <p>Manufacturers: {payloadInfo?.manufacturers}</p>
-      <p>Mass_kg: {payloadInfo?.mass_kg}</p>
+      <p><strong>Name: </strong>{payloadInfo?.name}</p>
+      <p><strong>Type: </strong>{payloadInfo?.type}</p>
+      <p><strong>Manufacturers: </strong>{payloadInfo?.manufacturers}</p>
+      <p><strong>Mass_kg: </strong>{payloadInfo?.mass_kg}</p>
     </div>
   );
 }

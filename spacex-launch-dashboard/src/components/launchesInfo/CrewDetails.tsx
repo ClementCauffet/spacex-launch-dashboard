@@ -35,11 +35,14 @@ function CrewDetails({ crew }: CrewDetailsProps) {
   const crewInfo = data?.crewDetails;
 
   return (
-    <div>
-      <h2>Crew Details</h2>
-      <p>Name: {crewInfo?.name}</p>
-      <p>Agency: {crewInfo?.agency}</p>
-      <p>Image: {crewInfo?.image}</p>
+    <div>      
+      <p><strong>Name: </strong>{crewInfo?.name}</p>
+      <p><strong>Agency: </strong>{crewInfo?.agency}</p>
+      <img
+        src={crewInfo?.image}
+        alt="RocketImg"
+        style={{width: "300px", height: "auto", borderRadius: "5%"}}                    
+      />
     </div>
   );
 }

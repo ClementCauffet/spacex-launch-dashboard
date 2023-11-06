@@ -43,14 +43,13 @@ function LaunchpadDetails({ launchpad }: LaunchpadDetailsProps) {
   const launchpadInfo = data?.launchpadDetails;
 
   return (
-    <div>
-      <h2>Launchpad Details</h2>
-      <p>Full Name: {launchpadInfo?.full_name}</p>
-      <p>Region: {launchpadInfo?.region}</p>
-      <p>Latitude: {launchpadInfo?.latitude}</p>
-      <p>Longitude: {launchpadInfo?.longitude}</p>
-      <p>Launch Attempts: {launchpadInfo?.launch_attempts}</p>
-      <p>Launch Successes: {launchpadInfo?.launch_successes}</p>
+    <div>      
+      <p><strong>Name: </strong>{launchpadInfo?.full_name}</p>
+      <p><strong>Region: </strong>{launchpadInfo?.region}</p>
+      <p><strong>Latitude</strong>{launchpadInfo?.latitude}</p>
+      <p><strong>Longitude: </strong>{launchpadInfo?.longitude}</p>
+      <p><strong>Launch Attempts: </strong>{launchpadInfo?.launch_attempts}</p>
+      <p><strong>Launch Successes: </strong>{launchpadInfo?.launch_successes}</p>
     </div>
   );
 }
