@@ -20,17 +20,17 @@ header {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #3E3E3B; /* Couleur de fond du footer */
-    color: #fff; /* Couleur du texte du footer */
+    background-color: #3E3E3B; 
+    color: #fff; 
     text-align: center;
-    padding: 5px; /* Réduire la taille du padding */
+    padding: 5px; 
   }
 
   .App {
     background-color:#F8F3E6;
   }
   
-  /* Styles pour les icônes SVG dans le footer */
+
   footer a {
     color: #3E3E3B;
     text-decoration: none;

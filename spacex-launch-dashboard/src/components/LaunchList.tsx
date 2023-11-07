@@ -45,6 +45,7 @@ const LaunchList: React.FC = () => {
 
   const { loading, error, data } = useQuery<{ allLaunches: Launch[] }>(GET_LAUNCHES);
 
+  //Storing data in IndexedDB
   useEffect(() => {
     openDB("SpaceXLaunchesDB", 1, {
       upgrade: (db) => {
@@ -119,7 +120,7 @@ const LaunchList: React.FC = () => {
   // Calculate total number of pages
   const totalPages = Math.ceil(launches.length / itemsPerPage);
 
-  // Calculate curent index
+  // Calculate current index
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentLaunches = launches.slice(startIndex, endIndex);

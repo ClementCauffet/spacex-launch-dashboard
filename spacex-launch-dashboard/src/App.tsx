@@ -1,8 +1,8 @@
-// App.tsx
+
 
 import React from "react";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Importez les composants de React Router
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; 
 import LaunchList from "./components/LaunchList";
 import LaunchDetails from "./components/LaunchDetails";
 import "./App.css";
@@ -11,6 +11,8 @@ const client = new ApolloClient({
   uri: "http://localhost:4000/graphql",
   cache: new InMemoryCache(),
 });
+
+
 
 function App() {
   console.log("App Component Rendered");

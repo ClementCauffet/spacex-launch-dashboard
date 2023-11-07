@@ -1,0 +1,24 @@
+# Node image to build the app
+FROM node:14
+
+# Working directory
+WORKDIR /app
+
+# Copying package files in the container
+COPY package*.json ./
+RUN npm install
+
+# Copying source code in the container
+COPY . .
+
+# Transpiling TypeScript in JavaScript
+RUN npm run compile
+
+# Listening port
+EXPOSE 4000
+
+# HOSTNAME --> backend  
+ENV HOSTNAME localhost
+
+# Starting backend app
+CMD ["npm", "start"]

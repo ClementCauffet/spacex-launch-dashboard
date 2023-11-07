@@ -2,6 +2,8 @@ import axios from "axios";
 
 const resolvers = {
   Query: {
+
+    //Queries related to all launches
     allLaunches: async () => {
       try {
         const response = await axios.get("https://api.spacexdata.com/v5/launches");
@@ -17,6 +19,8 @@ const resolvers = {
         throw new Error("Failed to fetch SpaceX launches.");
       }
     },
+
+    //Queries related to a single launch
     singleLaunch: async (_, { id }) => {
       try {
         const response = await axios.get(`https://api.spacexdata.com/v5/launches/${id}`);
@@ -37,6 +41,8 @@ const resolvers = {
         throw new Error(`Failed to fetch SpaceX launch details for ID: ${id}`);
       }
     },
+
+    //Queries related to the launchpad
     launchpadDetails: async (_, { id }) => {
       try {
         const response = await axios.get(`https://api.spacexdata.com/v4/launchpads/${id}`);
@@ -54,6 +60,8 @@ const resolvers = {
         throw new Error(`Failed to fetch SpaceX launch details for ID: ${id}`);
       }
     },
+
+    //Queries related to the rocket
     rocketDetails: async (_, { id }) => {
       try {
         const response = await axios.get(`https://api.spacexdata.com/v4/rockets/${id}`);
@@ -69,6 +77,8 @@ const resolvers = {
         throw new Error(`Failed to fetch SpaceX rocket details for ID: ${id}`);
       }
     },
+
+    //Queries related to crewmembers
     crewDetails: async (_, { id }) => {
       try {
         const response = await axios.get(`https://api.spacexdata.com/v4/crew/${id}`);
@@ -83,6 +93,8 @@ const resolvers = {
         throw new Error(`Failed to fetch SpaceX crew details for ID: ${id}`);
       }
     },
+
+    //Queries related to payloads
     payloadDetails: async (_, { id }) => {
       try {
         const response = await axios.get(`https://api.spacexdata.com/v4/payloads/${id}`);

@@ -1,0 +1,27 @@
+# Node image to build the app
+FROM node:14 as build
+
+# Working directory
+WORKDIR /app
+
+# Copying package files in the container
+COPY package.json package-lock.json ./
+RUN npm install
+
+# Copying source code in the container
+COPY . .
+
+# Production version
+RUN npm run build
+
+# Nginx light image
+FROM nginx:alpine
+
+# Setting up
+COPY --from=build /app/build /usr/share/nginx/html
+
+# Listening on port 4000
+EXPOSE 80
+
+# Path to GraphQL server
+ENV REACT_APP_GRAPHQL_URL http://localhost:4000/graphql

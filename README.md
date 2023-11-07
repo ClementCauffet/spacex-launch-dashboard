@@ -1,23 +1,58 @@
-# spacex-launch-dashboard
-SpaceX launch dashboard in typescript
+# SpaceX Launch Dashboard
 
-# Description
-This project is part of Riverflow's recruitment process
+SpaceX launch dashboard in Typescript
 
-# Development Status
-- [X] Project architecture
-- [ ] Dockerfiles
-- [X] Query all launches
-- [X] Query all info / flight
-- [X] Database for storing all launches info
-- [X] Filters
-- [X] Pagination (not that useful but funny)
-- [ ] Graphic
-- [ ] Caching strategies
-- [ ] Tests ?
-- [ ] Deployment
+In the context of Riverflow's recruitment process, this project serves as a showcase.
 
-# Note
-Using use State to pass the ID
-Decided to use a database to store all launches data regarding the amount of data, think this is better for furter use / performances.
-Will work tomorrow on what data to display exactly, saw some fun stuff to do
+<img src="./spacex-launch-dashboard/public/img/Preview SpaceX.PNG" alt="drawing" width="300px"/>
+
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running with Docker](#running-with-docker)
+- [Examples](#examples)
+- [Personal thoughts](#license)
+
+## Prerequisites
+
+- Docker
+
+
+- (_Nice to have_ : Passion for rocket launches)
+
+## Installation
+
+Clone the repository from GitHub:
+
+```bash
+git clone https://github.com/ClementCauffet/spacex-launch-dashboard.git
+cd spacex-launch-dashboard
+```
+
+## Running with Docker
+
+Ensure that **Docker** is _installed_ and _running_.
+
+Build the Docker images for the project (both front-end and back-end):
+```bash
+docker-compose build
+```
+
+Once the Docker images are successfully built, you can run:
+
+```bash
+docker-compose run
+```
+
+## Examples
+
+Flight names with interesting content :
+- CCtCap Demo Mission 2
+- Crew-5
+- CRS-7
+
+
+## Personal thoughts
+
+Appreciated working on this project

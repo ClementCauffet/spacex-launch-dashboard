@@ -1,0 +1,24 @@
+version: '2'
+services:
+  frontend:
+    build:
+      context: ./spacex-launch-dashboard  
+      dockerfile: Dockerfile.frontend  
+    ports:
+      - "80:80"
+    networks:
+      - myapp-network
+
+  backend:
+    build:
+      context: ./spacex-backend  
+      dockerfile: Dockerfile.backend  
+    ports:
+      - "4000:4000"  
+    environment:
+      - PORT=4000  # GraphQL
+    networks:
+      - myapp-network
+
+networks:
+  myapp-network:
