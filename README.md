@@ -42,7 +42,13 @@ docker-compose build
 Once the Docker images are successfully built, you can run:
 
 ```bash
-docker-compose run
+docker-compose up
+```
+
+When both services are up and running, just visit the app on your browser using this URL :
+
+```
+http://localhost:80
 ```
 
 ## Examples
