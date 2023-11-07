@@ -9,10 +9,8 @@ import "./App.css";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql",
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({}),
 });
-
-
 
 function App() {
   console.log("App Component Rendered");

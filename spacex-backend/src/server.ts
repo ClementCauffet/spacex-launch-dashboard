@@ -16,6 +16,7 @@ async function startServer() {
   //Defining server URL in Dockerfile or default localhost
   const hostname = process.env.HOSTNAME || 'localhost';
 
+  //Running server
   app.listen({ port: PORT }, () => {
     console.log(`Server is running at http://${hostname}:${PORT}${server.graphqlPath}`);
   });
